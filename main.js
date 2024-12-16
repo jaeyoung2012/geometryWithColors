@@ -10,20 +10,21 @@ const coinEl = document.getElementById("coin");
 
 let level = 0;
 let coin = 0;
-let maxBullet = 50;
+let maxBullet = 60;
 let bulletCount = maxBullet;
 let magazineCount = 1;
 let type = 0;
 
 const enemySpeed = 10;
 const lerpSpeed = 0.01;
-let bulletSpeed = 20;
 let enemySpawnTime = 200 / (level + 1);
 let clearScore = 0;
-let shootCool = 30;
+let shootCool = 300;
+const minShootCool = 50
 const playerDashSpeed = 20;
 const playerOriginSpeed = 300;
 const itemWH = 50;
+const bulletSpeed = 10;
 
 Math.SQRT_3 = Math.sqrt(3);
 
@@ -109,7 +110,7 @@ class Bullet {
     constructor(x, y, angle) {
         this.x = x;
         this.y = y;
-        this.r = 10;
+        this.r = 5;
 
         this.dx = bulletSpeed * Math.cos(angle);
         this.dy = bulletSpeed * Math.sin(angle);
@@ -437,20 +438,14 @@ const start = () => {
     }, 1000);
 
     if (type == 0) {
-        maxBullet = 10;
-        shootCool = 500;
-        skillCool = 1000;
-        skill_duration = 6000;
+        skillCool = 100;
+        skill_duration = 10;
         hp = 3;
     } else if (type == 1) {
-        maxBullet = 50;
-        shootCool = 100;
         skillCool = 10000000000;
         skill_duration = 0;
         hp = 5;
     } else if (type == 2) {
-        maxBullet = 60;
-        shootCool = 90;
         skillCool = 1000;
         skill_duration = 10000;
         hp = 3;
@@ -464,6 +459,7 @@ const start = () => {
 function choose(s) {
     type = s;
 }
+
 
 function frame(timestamp) {
     clearScore = Math.round((50 + (level / 100) * 9950) / 50) * 50;
@@ -558,12 +554,14 @@ function frame(timestamp) {
         }
 
         if (usedSkill && type == 2) {
-            
+            //  just stop because of 계엄령
         } 
         else if (usedSkill && type == 0) {
             if (Math.abs(a.x - player.x - player.d / 2) < 300 && Math.abs(a.y - player.y - player.d / 2) < 300) {
                 o.splice(i, 1);
+                score += 1;
             }
+            a.move();
         } 
         else {
             a.move();
@@ -661,6 +659,12 @@ function movement() {
             usedSkill = true;
             skillTime = timer;
             console.log("스킬 발동!");
+
+            if (type == 0) {
+                hp -= 1;
+            } else if (type == 2) {
+                hp -= 1
+            }
         }
     }
     // 플레이어의 위치를 업데이트

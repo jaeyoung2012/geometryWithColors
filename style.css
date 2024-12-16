@@ -49,6 +49,18 @@ body {
     margin-top: 10px;
 }
 
+#choose {
+    color: white;
+    font-family: "WAGURITTF";
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 수평 가운데 정렬 */
+    justify-content: center; /* 수직 가운데 정렬 */
+}
+
+#choose > * {
+    margin-top: 10px;
+}
+
 #app {
     display: flex;
     flex-direction: column; /* 세로 방향으로 정렬 */
