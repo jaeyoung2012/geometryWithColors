@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'WAGURITTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403@1.0/WAGURITTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#canvas { 
+    border: 1px solid white;
+    padding: 0;
+    margin: 0;  
+}
+
+body {
+    background: black;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#description {
+    margin-right: 400px;
+    color: white;
+    font-family: "WAGURITTF";
+    display: flex; 
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 수평 가운데 정렬 */
+    justify-content: center; /* 수직 가운데 정렬 */
+/* 아이템 간격 추가 */
+}
+
+#description > * {
+    margin-top: 10px;
+}
+
+#shop {
+    color: white;
+    font-family: "WAGURITTF";
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 수평 가운데 정렬 */
+    justify-content: center; /* 수직 가운데 정렬 */
+}
+
+#shop > * {
+    margin-top: 10px;
+}
+
+#app {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.rect {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px; /* 필요시 좌측 마진 조정 */
+}
+
+.aqua {
+    background-color: aqua;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.white {
+    background-color: white;
+}
+
+button { 
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    font-family: "WAGURITTF";
+    display: block;
+}
+
+p {
+    text-align: center;
+    margin: 5px 0; /* 위아래 마진 추가 */
+}
+
+.title {
+    animation-name: title;
+    animation-duration: 10s;
+    color: white;
+}
+
+button.skip {
+    border: none;
+    margin-left: 100px;
+}
+
+#start {
+    position: relative;
+}
+
+@keyframes title {
+    0% {
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+    10% {
+        opacity: 0.5;
+        transform: translateX(-100px) translateY(-100px);
+    }
+    40% {
+        opacity: 0.1;
+        transform: translateX(0px);
+        color: aqua;
+        text-shadow: -1px 0px white;
+    }
+    100% {
+        opacity: 1;
+    }
+}

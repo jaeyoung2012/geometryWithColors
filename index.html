@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry With Colors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="start">
+            <h1 class="title" id="title">Geometry With Colors</h1>
+            <button onclick="main_funct()" class="skip">Skip ></button>
+        </div>
+        <div id="main" hidden>
+            <div id="description">
+                <div class="rect aqua"></div>
+                <p>민트초코</p>
+                <p id="level">레벨 : 0</p>
+                <p id="coin">코인 : $0</p>
+                <button onclick="reset()">리셋</button>
+                <button onclick="start()">시작하기</button>
+                <p>
+                    WASD로 움직이고 Q키로 장전, E키로 스킬 사용
+                </p>
+            </div>
+
+
+            <div id="shop">
+                <div>
+                    <div onclick="choose(0)">
+                        <div class="rect red"></div>
+                        <h3>자폭</h3>
+                        <p>스킬을 써서 자폭을 해 광범위한 타격을 입힙니다.</p>
+                    </div>
+                    <div onclick="choose(1)">
+                        <div class="rect white"></div>
+                        <h3>정의의 심판</h3>
+                        <p>체력이 많고 스킬을 쓰면 모든 사악한 생명체를 없앱니다. 그러나 한번만 쓸 수 있습니다.</p>
+                    </div>
+                    <div onclick="choose(2)">
+                        <div class="rect green"></div>
+                        <h3>국민의힘</h3>
+                        <p>스킬을 써서 계엄령을 선포합니다. 계엄령이 선포되면 모든 몬스터가 멈춥니다. (예능용임)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="canvas" hidden></canvas>
+    </div>
+
+    
+    <script src="main.js"></script>
+</body>
+</html>
