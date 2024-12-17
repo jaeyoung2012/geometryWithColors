@@ -536,6 +536,8 @@ function frame(timestamp) {
         startStamp = timestamp
     }
 
+    console.log(timer)
+
 
     enemies.map((a, i, o) => {
         if (a.checkCollision()) {
