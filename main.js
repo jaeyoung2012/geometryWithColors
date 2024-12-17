@@ -439,7 +439,7 @@ const start = () => {
 
     if (type == 0) {
         skillCool = 10000;
-        skill_duration = 10;
+        skill_duration = 50;
         hp = 3;
     } else if (type == 1) {
         skillCool = 1000000000000;
