@@ -656,6 +656,7 @@ function movement() {
 
     if (keys.includes("KeyE")) {
         if (timer - skillTime > skillCool || skillTime == 0) {
+            console.log(skillTime)
             usedSkill = true;
             skillTime = timer;
             console.log("스킬 발동!");
