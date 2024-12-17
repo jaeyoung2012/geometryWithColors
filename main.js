@@ -438,7 +438,7 @@ const start = () => {
     }, 1000);
 
     if (type == 0) {
-        skillCool = 10000;
+        skillCool = 1000;
         skill_duration = 50;
         hp = 3;
     } else if (type == 1) {
@@ -446,7 +446,7 @@ const start = () => {
         skill_duration = 0;
         hp = 5;
     } else if (type == 2) {
-        skillCool = 10000;
+        skillCool = 1000;
         skill_duration = 10000;
         hp = 3;
     }
