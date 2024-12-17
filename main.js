@@ -656,7 +656,7 @@ function movement() {
 
     if (keys.includes("KeyE")) {
         console.log(skillTime, timer, skillCool)
-        if (timer - skillTime > skillCool || skillTime == 0) {
+        if (timer - skillTime > skillCool || skillTime == 0 && !usedSkill) {
             console.log(skillTime)
             usedSkill = true;
             skillTime = timer;
