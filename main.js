@@ -806,6 +806,9 @@ function end() {
 
     bulletCount = maxBullet;
     magazineCount = 1;
+
+    timer = 0;
+    skillTime = 0;
 }
 
 function stageClear() {
@@ -819,6 +822,9 @@ function stageClear() {
 
     levelEl.innerText = `레벨 : ${level}`;
     coinEl.innerText =  `코인 : $${coin}`;
+
+    timer = 0;
+    skillTime = 0;
 }
 
 function getData() {
